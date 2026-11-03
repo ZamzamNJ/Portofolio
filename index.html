@@ -1,0 +1,2127 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZAM ZAM NURJAMAN, S.H., CCD | Legal Portfolio - Black Clover Theme</title>
+  
+  <!-- Google Fonts: Cinzel Decorative, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              DEFAULT: '#2c67ed',
+              50: '#edf4ff',
+              100: '#dbe7fe',
+              200: '#bfd5fe',
+              300: '#93bafd',
+              400: '#6095fa',
+              500: '#2c67ed',
+              600: '#1d4ed8',
+              700: '#1e40af',
+              800: '#1e3a8a',
+              900: '#0f172a',
+              glow: 'rgba(44, 103, 237, 0.65)'
+            },
+            void: {
+              950: '#03050a',
+              900: '#060a14',
+              850: '#090f1f',
+              800: '#0d152c',
+              700: '#121d3c'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Cinzel"', 'serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          },
+          animation: {
+            'glow-pulse': 'glowPulse 3s ease-in-out infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'spin-slow': 'spin 20s linear infinite',
+            'reverse-spin': 'reverseSpin 25s linear infinite',
+            'mana-shimmer': 'manaShimmer 4s ease infinite',
+          },
+          keyframes: {
+            glowPulse: {
+              '0%, 100%': { 
+                boxShadow: '0 0 20px rgba(44, 103, 237, 0.4), inset 0 0 15px rgba(44, 103, 237, 0.2)' 
+              },
+              '50%': { 
+                boxShadow: '0 0 40px rgba(44, 103, 237, 0.8), inset 0 0 25px rgba(44, 103, 237, 0.4)' 
+              }
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-12px)' }
+            },
+            reverseSpin: {
+              from: { transform: 'rotate(360deg)' },
+              to: { transform: 'rotate(0deg)' }
+            },
+            manaShimmer: {
+              '0%, 100%': { opacity: '0.4' },
+              '50%': { opacity: '0.9' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- React 18 and Babel Standalone -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #03050a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e3a8a;
+      border-radius: 4px;
+      border: 1px solid rgba(44, 103, 237, 0.3);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #2c67ed;
+    }
+
+    /* Grimoire Aura & Glow Effects */
+    .glow-blue {
+      box-shadow: 0 0 30px rgba(44, 103, 237, 0.45);
+    }
+    .glow-blue-lg {
+      box-shadow: 0 0 60px rgba(44, 103, 237, 0.55);
+    }
+    .glow-blue-text {
+      text-shadow: 0 0 18px rgba(44, 103, 237, 0.8), 0 0 35px rgba(44, 103, 237, 0.5);
+    }
+    .glass-panel {
+      background: rgba(9, 15, 31, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(44, 103, 237, 0.25);
+    }
+    .glass-card {
+      background: linear-gradient(135deg, rgba(13, 21, 44, 0.75) 0%, rgba(6, 10, 20, 0.85) 100%);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(44, 103, 237, 0.2);
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card:hover {
+      border-color: rgba(44, 103, 237, 0.7);
+      box-shadow: 0 10px 35px -10px rgba(44, 103, 237, 0.45);
+      transform: translateY(-4px);
+    }
+
+    /* Magic Rune Pattern Grid */
+    .rune-bg {
+      background-image: 
+        radial-gradient(circle at 50% 50%, rgba(44, 103, 237, 0.08) 1px, transparent 1px),
+        linear-gradient(to right, rgba(44, 103, 237, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(44, 103, 237, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px, 80px 80px, 80px 80px;
+    }
+  </style>
+</head>
+<body class="bg-void-950 text-slate-100 font-sans antialiased selection:bg-brand selection:text-white overflow-x-hidden min-h-screen">
+  <div id="root"></div>
+
+  <!-- Main React Application Script -->
+  <script type="text/babel">
+    const { useState, useEffect, useRef } = React;
+
+    // --- Clover SVG Icons & Magic Emblems ---
+    const FiveLeafClover = ({ className = "w-6 h-6", glow = true }) => (
+      <svg 
+        viewBox="0 0 100 100" 
+        className={`${className} ${glow ? 'drop-shadow-[0_0_12px_rgba(44,103,237,0.8)]' : ''}`}
+        fill="currentColor"
+      >
+        <g transform="translate(50, 50)">
+          <path d="M 0 0 C -15 -25, -25 -45, 0 -48 C 25 -45, 15 -25, 0 0 Z" fill="#2c67ed" />
+          <path d="M 0 0 C -40 -12, -48 10, -32 28 C -15 32, -8 18, 0 0 Z" fill="#1d4ed8" />
+          <path d="M 0 0 C 40 -12, 48 10, 32 28 C 15 32, 8 18, 0 0 Z" fill="#1d4ed8" />
+          <path d="M 0 0 C -22 15, -28 42, -5 45 C 5 35, 3 20, 0 0 Z" fill="#3b82f6" />
+          <path d="M 0 0 C 22 15, 28 42, 5 45 C -5 35, -3 20, 0 0 Z" fill="#60a5fa" />
+          <circle cx="0" cy="0" r="7" fill="#03050a" stroke="#60a5fa" strokeWidth="2" />
+          <circle cx="0" cy="0" r="3" fill="#ffffff" />
+        </g>
+      </svg>
+    );
+
+    const SwordIcon = ({ className = "w-5 h-5" }) => (
+      <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5" />
+        <line x1="13" y1="19" x2="19" y2="13" />
+        <line x1="16" y1="16" x2="20" y2="20" />
+        <line x1="19" y1="21" x2="21" y2="19" />
+      </svg>
+    );
+
+    const ShieldLawIcon = ({ className = "w-5 h-5" }) => (
+      <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        <path d="M12 8v4" />
+        <path d="M12 16h.01" />
+      </svg>
+    );
+
+    const ScaleJusticeIcon = ({ className = "w-5 h-5" }) => (
+      <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
+        <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
+        <path d="M7 21h10" />
+        <path d="M12 3v18" />
+        <path d="M3 7h18" />
+      </svg>
+    );
+
+    const SparklesIcon = ({ className = "w-5 h-5" }) => (
+      <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+      </svg>
+    );
+
+    const GrimoireIcon = ({ className = "w-5 h-5" }) => (
+      <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+        <path d="M10 6h4" />
+        <path d="M12 4v4" />
+        <path d="M9 12h6" />
+      </svg>
+    );
+
+    // --- Particle Mana Background Canvas ---
+    const MagicParticleCanvas = () => {
+      const canvasRef = useRef(null);
+
+      useEffect(() => {
+        const canvas = canvasRef.current;
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        let animationFrameId;
+
+        let width = (canvas.width = window.innerWidth);
+        let height = (canvas.height = window.innerHeight);
+
+        const handleResize = () => {
+          width = canvas.width = window.innerWidth;
+          height = canvas.height = window.innerHeight;
+        };
+        window.addEventListener('resize', handleResize);
+
+        const particleCount = 75;
+        const particles = [];
+        const runes = ['♠', '♣', '♦', '✦', '✧', '§', '¶', '⚖', '⚔', '5'];
+
+        for (let i = 0; i < particleCount; i++) {
+          particles.push({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            radius: Math.random() * 2.5 + 0.8,
+            speedY: -(Math.random() * 0.9 + 0.3),
+            speedX: (Math.random() - 0.5) * 0.5,
+            opacity: Math.random() * 0.7 + 0.2,
+            pulseSpeed: Math.random() * 0.03 + 0.01,
+            pulseVal: Math.random() * Math.PI,
+            isRune: Math.random() > 0.82,
+            runeChar: runes[Math.floor(Math.random() * runes.length)]
+          });
+        }
+
+        let mouseX = width / 2;
+        let mouseY = height / 2;
+        const handleMouseMove = (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+        };
+        window.addEventListener('mousemove', handleMouseMove);
+
+        const render = () => {
+          ctx.clearRect(0, 0, width, height);
+
+          const grad = ctx.createRadialGradient(mouseX, mouseY, 10, mouseX, mouseY, 500);
+          grad.addColorStop(0, 'rgba(44, 103, 237, 0.07)');
+          grad.addColorStop(1, 'rgba(3, 5, 10, 0)');
+          ctx.fillStyle = grad;
+          ctx.fillRect(0, 0, width, height);
+
+          particles.forEach((p) => {
+            p.y += p.speedY;
+            p.x += p.speedX;
+            p.pulseVal += p.pulseSpeed;
+
+            if (p.y < -30) {
+              p.y = height + 20;
+              p.x = Math.random() * width;
+            }
+            if (p.x < -20) p.x = width + 20;
+            if (p.x > width + 20) p.x = -20;
+
+            const currentOpacity = p.opacity * (0.6 + 0.4 * Math.sin(p.pulseVal));
+
+            if (p.isRune) {
+              ctx.font = '13px "Cinzel", serif';
+              ctx.fillStyle = `rgba(96, 165, 250, ${currentOpacity * 0.85})`;
+              ctx.shadowColor = '#2c67ed';
+              ctx.shadowBlur = 10;
+              ctx.fillText(p.runeChar, p.x, p.y);
+              ctx.shadowBlur = 0;
+            } else {
+              ctx.beginPath();
+              ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+              ctx.fillStyle = `rgba(44, 103, 237, ${currentOpacity})`;
+              ctx.shadowColor = '#60a5fa';
+              ctx.shadowBlur = 12;
+              ctx.fill();
+              ctx.shadowBlur = 0;
+            }
+          });
+
+          for (let i = 0; i < particles.length; i++) {
+            for (let j = i + 1; j < particles.length; j++) {
+              const dx = particles[i].x - particles[j].x;
+              const dy = particles[i].y - particles[j].y;
+              const dist = Math.sqrt(dx * dx + dy * dy);
+              if (dist < 85) {
+                ctx.beginPath();
+                ctx.moveTo(particles[i].x, particles[i].y);
+                ctx.lineTo(particles[j].x, particles[j].y);
+                ctx.strokeStyle = `rgba(44, 103, 237, ${0.12 * (1 - dist / 85)})`;
+                ctx.lineWidth = 0.8;
+                ctx.stroke();
+              }
+            }
+          }
+
+          animationFrameId = requestAnimationFrame(render);
+        };
+
+        render();
+
+        return () => {
+          window.removeEventListener('resize', handleResize);
+          window.removeEventListener('mousemove', handleMouseMove);
+          cancelAnimationFrame(animationFrameId);
+        };
+      }, []);
+
+      return (
+        <canvas 
+          ref={canvasRef} 
+          className="fixed inset-0 pointer-events-none z-0 opacity-80"
+        />
+      );
+    };
+
+    // --- Typewriter Component with Alternating Roles ---
+    const TypewriterRoles = ({ roles = [] }) => {
+      const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
+      const [displayedText, setDisplayedText] = useState("");
+      const [isDeleting, setIsDeleting] = useState(false);
+      const [typingSpeed, setTypingSpeed] = useState(110);
+
+      useEffect(() => {
+        const fullText = roles[currentRoleIndex] || "";
+        let timer;
+
+        if (!isDeleting && displayedText === fullText) {
+          timer = setTimeout(() => {
+            setIsDeleting(true);
+            setTypingSpeed(55);
+          }, 1800);
+        } else if (isDeleting && displayedText === "") {
+          setIsDeleting(false);
+          setCurrentRoleIndex((prev) => (prev + 1) % roles.length);
+          setTypingSpeed(100);
+        } else {
+          timer = setTimeout(() => {
+            setDisplayedText((prev) =>
+              isDeleting ? fullText.substring(0, prev.length - 1) : fullText.substring(0, prev.length + 1)
+            );
+          }, typingSpeed);
+        }
+
+        return () => clearTimeout(timer);
+      }, [displayedText, isDeleting, currentRoleIndex, roles, typingSpeed]);
+
+      return (
+        <span className="inline-flex items-center text-brand-400 font-mono font-bold tracking-wide">
+          <span className="glow-blue-text">{displayedText}</span>
+          <span className="w-1 h-7 md:h-8 bg-brand-400 ml-1.5 animate-pulse shadow-[0_0_10px_#2c67ed]"></span>
+        </span>
+      );
+    };
+
+    // --- Floating Navbar with Blue Glow ---
+    const FloatingNavbar = ({ activeSection, onOpenGrimoire }) => {
+      const [scrolled, setScrolled] = useState(false);
+      const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+      useEffect(() => {
+        const handleScroll = () => {
+          setScrolled(window.scrollY > 40);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+      }, []);
+
+      const navItems = [
+        { id: 'hero', label: 'Beranda' },
+        { id: 'about', label: 'About Me' },
+        { id: 'education', label: 'Pendidikan' },
+        { id: 'experience', label: 'Pengalaman' },
+        { id: 'achievements', label: 'Prestasi' },
+        { id: 'portfolio', label: 'Portfolio' },
+        { id: 'contact', label: 'Kontak' },
+      ];
+
+      return (
+        <header className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-5xl">
+          <nav 
+            className={`transition-all duration-500 rounded-full px-4 md:px-6 py-2.5 md:py-3 flex items-center justify-between
+              backdrop-blur-xl border border-brand/40 shadow-[0_0_25px_rgba(44,103,237,0.35)]
+              ${scrolled ? 'bg-void-900/90 shadow-[0_0_35px_rgba(44,103,237,0.55)] border-brand/70' : 'bg-void-950/75'}
+            `}
+          >
+            {/* Logo / Black Clover Crest */}
+            <a 
+              href="#hero" 
+              className="flex items-center gap-2.5 group cursor-pointer"
+            >
+              <div className="relative p-1.5 rounded-full bg-void-900 border border-brand/50 group-hover:border-brand transition-all shadow-[0_0_12px_rgba(44,103,237,0.4)]">
+                <FiveLeafClover className="w-6 h-6 text-brand-400 transform group-hover:rotate-12 transition-transform duration-300" />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-serif font-bold text-sm tracking-widest text-white group-hover:text-brand-300 transition-colors">
+                  ZAM ZAM<span className="text-brand-400">.SH</span>
+                </span>
+                <span className="text-[9px] uppercase tracking-wider text-slate-400 font-mono">
+                  Grimoire of Law
+                </span>
+              </div>
+            </a>
+
+            {/* Desktop Navigation Links */}
+            <div className="hidden lg:flex items-center gap-1 xl:gap-2">
+              {navItems.map((item) => {
+                const isActive = activeSection === item.id;
+                return (
+                  <a
+                    key={item.id}
+                    href={`#${item.id}`}
+                    className={`relative px-3.5 py-1.5 text-xs font-semibold tracking-wider uppercase transition-all rounded-full
+                      ${isActive 
+                        ? 'text-white bg-brand/20 shadow-[0_0_15px_rgba(44,103,237,0.5)] border border-brand/50' 
+                        : 'text-slate-300 hover:text-white hover:bg-white/5'}
+                    `}
+                  >
+                    {item.label}
+                    {isActive && (
+                      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3 h-0.5 bg-brand-400 rounded-full shadow-[0_0_8px_#2c67ed]" />
+                    )}
+                  </a>
+                );
+              })}
+            </div>
+
+            {/* Grimoire Action / Consult Button */}
+            <div className="flex items-center gap-2">
+              <button
+                onClick={onOpenGrimoire}
+                title="Buka Grimoire Sila ke-5"
+                className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold font-mono bg-void-850 hover:bg-brand/20 border border-brand/40 text-brand-300 transition-all hover:shadow-[0_0_15px_rgba(44,103,237,0.4)]"
+              >
+                <GrimoireIcon className="w-3.5 h-3.5 text-brand-400" />
+                <span>Grimoire</span>
+              </button>
+
+              <a
+                href="#contact"
+                className="relative inline-flex items-center justify-center px-4 py-1.5 text-xs font-bold tracking-wide text-white uppercase rounded-full overflow-hidden group bg-brand shadow-[0_0_18px_rgba(44,103,237,0.6)] hover:shadow-[0_0_28px_rgba(44,103,237,0.9)] transition-all transform hover:scale-105"
+              >
+                <span className="relative z-10 flex items-center gap-1.5">
+                  <ShieldLawIcon className="w-3.5 h-3.5" />
+                  <span>Konsultasi</span>
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-brand-600 via-brand-400 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </a>
+
+              {/* Mobile Menu Toggle Button */}
+              <button 
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-brand/20 border border-transparent hover:border-brand/30 transition-colors"
+                aria-label="Toggle menu"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  {mobileMenuOpen ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                  )}
+                </svg>
+              </button>
+            </div>
+          </nav>
+
+          {/* Mobile Dropdown Menu with Glow */}
+          {mobileMenuOpen && (
+            <div className="lg:hidden mt-2 p-4 rounded-2xl glass-panel shadow-[0_0_30px_rgba(44,103,237,0.45)] border border-brand/50 animate-fadeIn">
+              <div className="flex flex-col gap-1.5">
+                {navItems.map((item) => (
+                  <a
+                    key={item.id}
+                    href={`#${item.id}`}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="px-4 py-2 text-sm font-medium rounded-lg text-slate-300 hover:text-white hover:bg-brand/20 transition-all flex items-center justify-between"
+                  >
+                    <span>{item.label}</span>
+                    <span className="text-xs text-brand-400 font-mono">#law</span>
+                  </a>
+                ))}
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onOpenGrimoire();
+                  }}
+                  className="mt-2 w-full py-2 px-4 rounded-lg bg-void-850 border border-brand/40 text-brand-300 text-xs font-mono flex items-center justify-center gap-2"
+                >
+                  <GrimoireIcon className="w-4 h-4" />
+                  <span>Buka Grimoire 5-Daun</span>
+                </button>
+              </div>
+            </div>
+          )}
+        </header>
+      );
+    };
+
+    // --- Interactive 5-Leaf Clover Grimoire Modal (Black Clover Theme Easter Egg) ---
+    const GrimoireModal = ({ isOpen, onClose }) => {
+      if (!isOpen) return null;
+
+      const leaves = [
+        { number: '1', title: 'Integritas & Etika Yudisial', desc: 'Fondasi utama seorang praktisi hukum dalam menjaga rahasia jabatan, objektivitas perkara, dan marwah institusi keadilan.' },
+        { number: '2', title: 'Ketelitian Klausul (Contract Drafting)', desc: 'Setiap kata, frasa, dan tanda baca dalam draf kontrak menentukan batasan hak, liabilitas, dan perlindungan bisnis klien.' },
+        { number: '3', title: 'Kepatuhan Regulasi & Keadilan', desc: 'Memastikan seluruh operasional korporasi dan proses administrasi peradilan selaras dengan hukum positif dan asas-asas peradilan yang baik.' },
+        { number: '4', title: 'Strategi & Kepemimpinan Organisasi', desc: 'Menginisiasi terobosan besar, memimpin kompetisi hukum nasional (NMLC), dan membangun sinergi lintas institusi.' },
+        { number: '5', title: 'Tekad Pantang Menyerah (Asta Will)', desc: 'Di dalam daun kelima bersemayam semangat pantang menyerah untuk terus belajar, meneliti kasus, dan membela keadilan tanpa kompromi!' }
+      ];
+
+      return (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+          <div 
+            className="relative w-full max-w-2xl rounded-2xl p-6 md:p-8 bg-void-900 border-2 border-brand shadow-[0_0_60px_rgba(44,103,237,0.7)] animate-scaleUp overflow-hidden"
+            style={{
+              backgroundImage: 'radial-gradient(circle at top right, rgba(44,103,237,0.18), transparent 70%)'
+            }}
+          >
+            <div className="absolute -top-16 -right-16 w-56 h-56 rounded-full border border-brand/20 animate-spin-slow pointer-events-none" />
+            <div className="absolute -top-16 -right-16 w-44 h-44 rounded-full border border-dashed border-brand/30 animate-reverse-spin pointer-events-none" />
+
+            <div className="flex items-start justify-between pb-4 border-b border-brand/30">
+              <div className="flex items-center gap-3">
+                <FiveLeafClover className="w-10 h-10 text-brand-400" />
+                <div>
+                  <h3 className="font-serif text-xl font-bold text-white tracking-wide flex items-center gap-2">
+                    THE 5-LEAF GRIMOIRE OF LAW
+                  </h3>
+                  <p className="text-xs text-brand-300 font-mono">
+                    "Filosofi Ksatria Sihir Hukum - Pantang Menyerah Menjaga Keadilan"
+                  </p>
+                </div>
+              </div>
+              <button 
+                onClick={onClose}
+                className="p-1.5 rounded-full text-slate-400 hover:text-white hover:bg-brand/20 transition-colors"
+              >
+                ✕
+              </button>
+            </div>
+
+            <div className="mt-5 space-y-3.5">
+              {leaves.map((leaf) => (
+                <div 
+                  key={leaf.number}
+                  className={`p-3.5 rounded-xl border transition-all ${
+                    leaf.number === '5'
+                      ? 'bg-brand/15 border-brand shadow-[0_0_20px_rgba(44,103,237,0.35)]'
+                      : 'bg-void-850/80 border-slate-800 hover:border-brand/40'
+                  }`}
+                >
+                  <div className="flex items-center gap-3">
+                    <span className={`w-7 h-7 rounded-full flex items-center justify-center font-serif font-black text-sm ${
+                      leaf.number === '5' 
+                        ? 'bg-brand text-white shadow-[0_0_12px_#2c67ed]' 
+                        : 'bg-void-950 text-brand-300 border border-brand/30'
+                    }`}>
+                      {leaf.number}
+                    </span>
+                    <h4 className="font-semibold text-sm text-slate-100 flex-1">
+                      {leaf.title}
+                    </h4>
+                  </div>
+                  <p className="mt-1.5 text-xs text-slate-300 pl-10 leading-relaxed">
+                    {leaf.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-6 pt-4 border-t border-brand/25 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400 font-mono">
+              <span className="flex items-center gap-1.5 text-brand-300">
+                <SparklesIcon className="w-4 h-4 text-brand-400" />
+                Terinspirasi dari tekad Asta & Black Clover
+              </span>
+              <button
+                onClick={onClose}
+                className="px-5 py-2 rounded-xl bg-brand text-white font-bold hover:bg-brand-600 transition-colors shadow-[0_0_15px_rgba(44,103,237,0.4)]"
+              >
+                Tutup Grimoire
+              </button>
+            </div>
+          </div>
+        </div>
+      );
+    };
+
+    // --- Hero Section ---
+    const HeroSection = ({ onOpenGrimoire }) => {
+      const roles = [
+        "Legal Officer",
+        "Contract Drafting (CCD)",
+        "Legal Research & Analysis",
+        "Court Case Administration (SIPP)",
+        "Startup & Business Law Specialist"
+      ];
+
+      return (
+        <section 
+          id="hero" 
+          className="relative min-h-screen flex items-center justify-center pt-28 pb-16 px-4 md:px-8 rune-bg overflow-hidden"
+        >
+          {/* Glowing Aura Spheres */}
+          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 md:w-[600px] md:h-[600px] bg-brand/20 rounded-full blur-[140px] pointer-events-none" />
+          <div className="absolute bottom-10 right-10 w-72 h-72 bg-blue-600/15 rounded-full blur-[110px] pointer-events-none" />
+          <div className="absolute top-1/3 left-10 w-64 h-64 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none" />
+
+          {/* Central Magic Crest Watermark */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-5">
+            <FiveLeafClover className="w-[600px] h-[600px] text-brand" glow={false} />
+          </div>
+
+          <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
+            
+            {/* Top Black Clover Knight Badge */}
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full glass-panel border-brand/50 text-xs font-mono text-brand-300 mb-6 shadow-[0_0_20px_rgba(44,103,237,0.3)] animate-float">
+              <span className="flex h-2 w-2 relative">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
+              </span>
+              <span className="font-semibold tracking-wider uppercase">Certified Contract Drafter • Legal Knight</span>
+              <span className="text-slate-600">|</span>
+              <button 
+                onClick={onOpenGrimoire} 
+                className="text-white hover:text-brand-300 underline underline-offset-2 flex items-center gap-1 cursor-pointer"
+              >
+                <span>5-Leaf Grimoire</span>
+                <SparklesIcon className="w-3 h-3 text-brand-400" />
+              </button>
+            </div>
+
+            {/* Big Name */}
+            <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-3 leading-tight">
+              ZAM ZAM NURJAMAN, <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-blue-400 to-cyan-300 glow-blue-text">S.H., CCD</span>
+            </h1>
+
+            {/* Typing Roles Container */}
+            <div className="h-12 sm:h-14 flex items-center justify-center text-lg sm:text-2xl md:text-3xl font-semibold mb-6">
+              <span className="text-slate-400 mr-2 font-mono text-base sm:text-xl">Spesialisasi:</span>
+              <TypewriterRoles roles={roles} />
+            </div>
+
+            {/* Bio summary */}
+            <p className="max-w-3xl text-slate-300 text-sm sm:text-base md:text-lg mb-8 leading-relaxed font-sans">
+              Dedicated legal professional lulusan Hukum Tata Negara UIN Maulana Malik Ibrahim Malang (<span className="text-brand-300 font-semibold font-mono">IPK 3.86/4.00 - Cum Laude</span>) & bersertifikasi <span className="text-white font-bold font-mono">Certified Contract Drafting (CCD)</span>. Berpengalaman di Pengadilan Negeri Magetan, Pengadilan Militer Surabaya, inisiator kompetisi hukum nasional, serta riset hukum bisnis & startup digital.
+            </p>
+
+            {/* Quote Pill */}
+            <div className="max-w-xl mb-10 px-5 py-2.5 rounded-xl bg-void-900/80 border border-brand/30 shadow-[0_0_15px_rgba(44,103,237,0.2)]">
+              <p className="text-xs sm:text-sm text-slate-300 italic font-mono flex items-center justify-center gap-2">
+                <SwordIcon className="w-4 h-4 text-brand-400 shrink-0" />
+                <span>"Pantang menyerah adalah sihirku, dan hukum adalah pelindung keadilan."</span>
+                <FiveLeafClover className="w-4 h-4 text-brand-400 shrink-0" />
+              </p>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap items-center justify-center gap-4 w-full sm:w-auto">
+              <a
+                href="#portfolio"
+                className="w-full sm:w-auto px-7 py-3.5 rounded-full font-bold text-sm tracking-wider uppercase text-white bg-brand hover:bg-brand-600 transition-all duration-300 shadow-[0_0_25px_rgba(44,103,237,0.7)] hover:shadow-[0_0_40px_rgba(44,103,237,1)] flex items-center justify-center gap-2.5 transform hover:-translate-y-0.5"
+              >
+                <ScaleJusticeIcon className="w-4 h-4" />
+                <span>Eksplorasi Portfolio</span>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/zamzamnrjmn/"
+                target="_blank"
+                rel="noreferrer"
+                className="w-full sm:w-auto px-7 py-3.5 rounded-full font-bold text-sm tracking-wider uppercase text-brand-300 bg-void-900 hover:bg-void-850 border border-brand/50 hover:border-brand transition-all duration-300 shadow-[0_0_15px_rgba(44,103,237,0.25)] hover:shadow-[0_0_25px_rgba(44,103,237,0.45)] flex items-center justify-center gap-2.5 transform hover:-translate-y-0.5"
+              >
+                <svg className="w-4 h-4 text-brand-400" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+                <span>Profil LinkedIn</span>
+              </a>
+
+              <a
+                href="#contact"
+                className="w-full sm:w-auto px-6 py-3.5 rounded-full font-bold text-sm tracking-wider uppercase text-slate-300 hover:text-white bg-transparent hover:bg-white/5 border border-slate-700 hover:border-slate-500 transition-all flex items-center justify-center gap-2"
+              >
+                <ShieldLawIcon className="w-4 h-4 text-slate-400" />
+                <span>Hubungi Saya</span>
+              </a>
+            </div>
+
+            {/* Quick Metrics Bar */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-14 w-full max-w-4xl">
+              <div className="glass-card p-4 rounded-2xl text-center">
+                <div className="font-serif text-2xl md:text-3xl font-extrabold text-white glow-blue-text">1,000+</div>
+                <div className="text-xs text-slate-400 mt-1 font-mono">Berkas Perkara Dikelola</div>
+              </div>
+              <div className="glass-card p-4 rounded-2xl text-center">
+                <div className="font-serif text-2xl md:text-3xl font-extrabold text-brand-400 glow-blue-text">3.86</div>
+                <div className="text-xs text-slate-400 mt-1 font-mono">IPK / 4.00 (Cum Laude)</div>
+              </div>
+              <div className="glass-card p-4 rounded-2xl text-center">
+                <div className="font-serif text-2xl md:text-3xl font-extrabold text-white glow-blue-text">CCD</div>
+                <div className="text-xs text-slate-400 mt-1 font-mono">Certified Contract Drafter</div>
+              </div>
+              <div className="glass-card p-4 rounded-2xl text-center">
+                <div className="font-serif text-2xl md:text-3xl font-extrabold text-brand-400 glow-blue-text">100%</div>
+                <div className="text-xs text-slate-400 mt-1 font-mono">Dedikasi & Pantang Menyerah</div>
+              </div>
+            </div>
+
+          </div>
+
+          <a 
+            href="#about"
+            className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-slate-500 hover:text-brand-400 transition-colors cursor-pointer group"
+          >
+            <span className="text-[10px] font-mono uppercase tracking-widest group-hover:text-brand-300">Scroll Down</span>
+            <svg className="w-4 h-4 animate-bounce text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </a>
+        </section>
+      );
+    };
+
+    // --- Section Header Helper ---
+    const SectionHeader = ({ badge, title, subtitle }) => (
+      <div className="text-center max-w-3xl mx-auto mb-14">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full glass-panel border-brand/40 text-xs font-mono text-brand-300 mb-3.5 shadow-[0_0_15px_rgba(44,103,237,0.3)]">
+          <FiveLeafClover className="w-3.5 h-3.5 text-brand-400" />
+          <span>{badge}</span>
+        </div>
+        <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          {title}
+        </h2>
+        {subtitle && (
+          <p className="mt-3 text-slate-400 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+            {subtitle}
+          </p>
+        )}
+      </div>
+    );
+
+    // --- Interactive Magic Detective Lens / Bubble Card (Hover to reveal Asta inside magnifying bubble) ---
+    const DetectiveBubbleProfileCard = ({ customPhotoUrl }) => {
+      const containerRef = useRef(null);
+      const [cursorPos, setCursorPos] = useState({ x: 160, y: 190 });
+      const [isActive, setIsActive] = useState(false);
+      const [lensRadius, setLensRadius] = useState(78); // radius in px (diameter = 156px)
+      const [isFullReveal, setIsFullReveal] = useState(false);
+      const [dimensions, setDimensions] = useState({ width: 320, height: 384 });
+
+      useEffect(() => {
+        const updateDims = () => {
+          if (containerRef.current) {
+            const rect = containerRef.current.getBoundingClientRect();
+            setDimensions({ width: rect.width || 320, height: rect.height || 384 });
+          }
+        };
+        updateDims();
+        window.addEventListener('resize', updateDims);
+        return () => window.removeEventListener('resize', updateDims);
+      }, []);
+
+      const handlePointerMove = (clientX, clientY) => {
+        if (!containerRef.current) return;
+        const rect = containerRef.current.getBoundingClientRect();
+        const x = clientX - rect.left;
+        const y = clientY - rect.top;
+        setCursorPos({ x, y });
+        setIsActive(true);
+      };
+
+      const handleMouseMove = (e) => {
+        handlePointerMove(e.clientX, e.clientY);
+      };
+
+      const handleTouchMove = (e) => {
+        const touch = e.touches[0];
+        if (touch) handlePointerMove(touch.clientX, touch.clientY);
+      };
+
+      const handleLeave = () => {
+        setIsActive(false);
+      };
+
+      const lensDiameter = lensRadius * 2;
+
+      return (
+        <div className="flex flex-col items-center">
+          {/* Outer Magic Crest Frame */}
+          <div className="relative group select-none">
+            <div className="absolute -inset-4 rounded-3xl border border-brand/30 animate-spin-slow pointer-events-none" />
+            <div className="absolute -inset-8 rounded-full border border-dashed border-brand/20 animate-reverse-spin pointer-events-none" />
+            <div className="absolute -inset-1 bg-gradient-to-r from-brand-600 via-blue-500 to-cyan-400 rounded-3xl blur-xl opacity-45 group-hover:opacity-85 transition duration-500" />
+
+            {/* Main Interactive Card Container */}
+            <div 
+              ref={containerRef}
+              onMouseMove={handleMouseMove}
+              onMouseEnter={() => setIsActive(true)}
+              onMouseLeave={handleLeave}
+              onTouchStart={(e) => {
+                const t = e.touches[0];
+                if (t) handlePointerMove(t.clientX, t.clientY);
+              }}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleLeave}
+              className="relative w-72 h-88 sm:w-80 sm:h-96 rounded-2xl overflow-hidden glass-panel border-2 border-brand/60 shadow-[0_0_35px_rgba(44,103,237,0.5)] cursor-crosshair flex flex-col justify-end p-5"
+            >
+              {/* LAYER 1: BASE FORMAL SUIT PHOTO (ALWAYS VISIBLE OUTSIDE LENS) */}
+              <img 
+                src={customPhotoUrl || './profile.png'} 
+                alt="Zam Zam Nurjaman Formal" 
+                className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+                style={{ objectPosition: 'center 20%' }}
+              />
+
+              {/* LAYER 2: DETECTIVE / BUBBLE LENS (ONLY APPEARS ON HOVER / TOUCH) */}
+              <div
+                className="absolute pointer-events-none z-10 rounded-full transition-opacity duration-200"
+                  style={{
+                    width: `${lensDiameter}px`,
+                    height: `${lensDiameter}px`,
+                    left: `${cursorPos.x - lensRadius}px`,
+                    top: `${cursorPos.y - lensRadius}px`,
+                    opacity: isActive ? 1 : 0,
+                    transform: isActive ? 'scale(1)' : 'scale(0.8)',
+                    boxShadow: '0 0 30px rgba(44,103,237,0.9), inset 0 0 25px rgba(44,103,237,0.65), 0 0 10px rgba(96,165,250,0.8)',
+                    border: '3px solid #60a5fa',
+                    overflow: 'hidden',
+                  }}
+                >
+                  {/* Inside Lens: Asta Artwork with Magnifying Scale (Menggelembung / Kaca Detektif) */}
+                  <img
+                    src="./asta.jpg"
+                    alt="Asta Inside Lens"
+                    className="absolute pointer-events-none"
+                    style={{
+                      width: `${dimensions.width}px`,
+                      height: `${dimensions.height}px`,
+                      maxWidth: 'none',
+                      left: `-${cursorPos.x - lensRadius}px`,
+                      top: `-${cursorPos.y - lensRadius}px`,
+                      objectFit: 'cover',
+                      objectPosition: 'top center',
+                      transform: 'scale(1.22)', // Menggelembung / Magnifying detective glass effect
+                      transformOrigin: `${cursorPos.x}px ${cursorPos.y}px`,
+                      filter: 'contrast(115%) saturate(120%)'
+                    }}
+                  />
+
+                  {/* Detective Glass Reflection & Optical Glare Overlay */}
+                  <div 
+                    className="absolute inset-0 pointer-events-none"
+                    style={{
+                      background: 'radial-gradient(circle at 35% 30%, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.1) 35%, rgba(44,103,237,0.2) 70%, rgba(44,103,237,0.65) 100%)',
+                      mixBlendMode: 'screen'
+                    }}
+                  />
+
+                  {/* Detective Crosshair / Rune Reticle Center Mark */}
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-40">
+                    <div className="w-6 h-6 rounded-full border border-cyan-300 flex items-center justify-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-cyan-300 shadow-[0_0_8px_#38bdf8]" />
+                    </div>
+                  </div>
+                </div>
+
+              {/* BOTTOM CARD IDENTITY INFO (2 BARIS SAJA) */}
+              <div className="relative z-20 pointer-events-none">
+                <h3 className="font-serif text-sm sm:text-base font-bold text-white tracking-wide drop-shadow-md leading-snug">
+                  Zam Zam Nurjaman, S.H., CCD
+                </h3>
+                <p className="text-[11px] text-slate-300 font-mono mt-0.5 drop-shadow">
+                  UIN Maulana Malik Ibrahim Malang
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    };
+
+    // --- Section About Me ---
+    const AboutSection = () => {
+      const [customPhotoUrl, setCustomPhotoUrl] = useState(null);
+      const fileInputRef = useRef(null);
+
+      const handleFileUpload = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (event) => {
+            setCustomPhotoUrl(event.target.result);
+          };
+          reader.readAsDataURL(file);
+        }
+      };
+
+      return (
+        <section id="about" className="py-24 px-4 md:px-8 relative bg-void-950/90">
+          <div className="max-w-6xl mx-auto">
+            <SectionHeader 
+              badge="GRIMOIRE PROFILE"
+              title="Tentang Saya"
+              subtitle="Profil profesional, integritas hukum berstandar tinggi, dan determinasi baja dalam melindungi kepentingan yudisial dan korporasi."
+            />
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              
+              {/* Left Column: Interactive Detective Bubble Lens Card */}
+              <div className="lg:col-span-5">
+                <DetectiveBubbleProfileCard 
+                  customPhotoUrl={customPhotoUrl}
+                />
+                
+                {/* Hidden File Input for Custom Photo */}
+                <input
+                  type="file"
+                  ref={fileInputRef}
+                  onChange={handleFileUpload}
+                  accept="image/*"
+                  className="hidden"
+                />
+              </div>
+
+              {/* Right Column: Bio & Core Pillars */}
+              <div className="lg:col-span-7 space-y-6">
+                <div className="glass-card p-6 md:p-8 rounded-2xl">
+                  <h3 className="font-serif text-2xl font-bold text-white flex items-center gap-2.5 mb-4">
+                    <ScaleJusticeIcon className="w-6 h-6 text-brand-400" />
+                    <span>Integritas Hukum & Ketelitian Klausul</span>
+                  </h3>
+                  
+                  <p className="text-slate-300 text-sm md:text-base leading-relaxed mb-4">
+                    Halo! Saya adalah <strong className="text-brand-300">Zam Zam Nurjaman, S.H., CCD</strong>, seorang profesional hukum yang berdedikasi tinggi dengan rekam jejak kepemimpinan organisasi kemahiran hukum, perancangan kontrak bisnis, administrasi peradilan pidana & militer, serta pemahaman mendalam regulasi hukum bisnis dan startup digital.
+                  </p>
+
+                  <p className="text-slate-300 text-sm md:text-base leading-relaxed mb-6">
+                    Bagi saya, merancang sebuah draf kontrak dan menelaah berkas perkara menuntut ketelitian absolut tanpa kompromi layaknya mengukir mantra sihir dalam <em className="text-brand-300 font-serif">Grimoire</em>. Setiap klausul, hak, kewajiban, dan mitigasi risiko dirumuskan demi menjamin kepastian hukum tertinggi bagi klien dan institusi.
+                  </p>
+
+                  {/* Core Competencies Grid */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+                    <div className="p-3 rounded-xl bg-void-950/70 border border-brand/20 flex items-start gap-3">
+                      <div className="p-2 rounded-lg bg-brand/20 text-brand-400 shrink-0">
+                        <SwordIcon className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <h4 className="text-xs font-bold text-white uppercase tracking-wider font-mono">Contract Drafting (CCD)</h4>
+                        <p className="text-[11px] text-slate-400 mt-0.5">Penyusunan kontrak bisnis profesional, telaah klausul, identifikasi risiko hukum, dan negosiasi komersial.</p>
+                      </div>
+                    </div>
+
+                    <div className="p-3 rounded-xl bg-void-950/70 border border-brand/20 flex items-start gap-3">
+                      <div className="p-2 rounded-lg bg-brand/20 text-brand-400 shrink-0">
+                        <ShieldLawIcon className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <h4 className="text-xs font-bold text-white uppercase tracking-wider font-mono">Court Administration</h4>
+                        <p className="text-[11px] text-slate-400 mt-0.5">Pengelolaan 1.000+ berkas perkara pidana, e-Court Mahkamah Agung, dan SIPP di PN Magetan & Dilmil Surabaya.</p>
+                      </div>
+                    </div>
+
+                    <div className="p-3 rounded-xl bg-void-950/70 border border-brand/20 flex items-start gap-3">
+                      <div className="p-2 rounded-lg bg-brand/20 text-brand-400 shrink-0">
+                        <ScaleJusticeIcon className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <h4 className="text-xs font-bold text-white uppercase tracking-wider font-mono">Business & Startup Law</h4>
+                        <p className="text-[11px] text-slate-400 mt-0.5">Analisis legalitas startup digital, perizinan OSS-RBA, perlindungan HAKI merek, dan kepatuhan hukum siber.</p>
+                      </div>
+                    </div>
+
+                    <div className="p-3 rounded-xl bg-void-950/70 border border-brand/20 flex items-start gap-3">
+                      <div className="p-2 rounded-lg bg-brand/20 text-brand-400 shrink-0">
+                        <SparklesIcon className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <h4 className="text-xs font-bold text-white uppercase tracking-wider font-mono">Legal Opinion & Research</h4>
+                        <p className="text-[11px] text-slate-400 mt-0.5">Penyusunan berkas perkara peradilan semu (Juara 1), legal opinion perbankan, dan riset hibah fakultas.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                {/* Personal Manifesto Bar */}
+                <div className="p-4 rounded-xl bg-gradient-to-r from-void-900 via-brand/10 to-void-900 border border-brand/30 flex items-center justify-between gap-4">
+                  <div className="flex items-center gap-3">
+                    <FiveLeafClover className="w-6 h-6 text-brand-400 shrink-0" />
+                    <div>
+                      <div className="text-xs font-bold text-white">Etos Ksatria Hukum Kerajaan Clover</div>
+                      <div className="text-[11px] text-slate-400">"Pantang menyerah dalam belajar, teliti dalam menyusun klausul hukum."</div>
+                    </div>
+                  </div>
+                  <span className="px-3 py-1 rounded-full text-[10px] font-mono bg-brand/20 text-brand-300 border border-brand/40 uppercase">
+                    Verified CCD
+                  </span>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </section>
+      );
+    };
+
+    // --- Section Education (Riwayat Pendidikan) ---
+    const EducationSection = () => {
+      const educations = [
+        {
+          period: "Agu 2022 - Jun 2026",
+          degree: "Sarjana Hukum (S.H.)",
+          institution: "Universitas Islam Negeri Maulana Malik Ibrahim - Malang",
+          major: "Bachelor of Constitutional Law (Hukum Tata Negara)",
+          gpa: "IPK 3.86 / 4.00 (Cum Laude)",
+          honors: [
+            "Meraih IPK Kumulatif 3.86/4.00 dengan predikat kelulusan Dengan Pujian (Cum Laude).",
+            "Penerima Hibah Riset Kolaboratif Mahasiswa–Dosen (Collaborative Student–Lecturer Research Grant) 2024.",
+            "Delegasi National Moot Court Competition (NMCC) Piala Prof. Kafrawi & Sharia Faculty NMCC VI.",
+            "Inisiator & Penanggung Jawab National Maliki Legal Competition (NMLC) 2025."
+          ]
+        }
+      ];
+
+      return (
+        <section id="education" className="py-20 px-4 md:px-8 relative bg-void-900/60 rune-bg">
+          <div className="max-w-5xl mx-auto">
+            <SectionHeader 
+              badge="ACADEMIC BACKGROUND"
+              title="Riwayat Pendidikan"
+              subtitle="Fondasi intelektual ilmu hukum tata negara dan prestasi akademik berstandar tinggi."
+            />
+
+            <div className="relative border-l-2 border-brand/40 ml-4 md:ml-32 space-y-12">
+              {educations.map((edu, idx) => (
+                <div key={idx} className="relative pl-8 md:pl-12 group">
+                  <div className="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-void-950 border-2 border-brand flex items-center justify-center shadow-[0_0_15px_#2c67ed] group-hover:scale-125 transition-transform">
+                    <FiveLeafClover className="w-4 h-4 text-brand-400" />
+                  </div>
+
+                  <div className="md:absolute md:-left-32 md:top-2 md:w-28 text-left md:text-right font-mono text-xs font-bold text-brand-300 mb-2 md:mb-0">
+                    <span className="px-2.5 py-1 rounded bg-brand/15 border border-brand/30 inline-block">
+                      {edu.period}
+                    </span>
+                  </div>
+
+                  <div className="glass-card p-6 rounded-2xl relative overflow-hidden">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+                      <h3 className="font-serif text-xl font-bold text-white group-hover:text-brand-300 transition-colors">
+                        {edu.degree}
+                      </h3>
+                      <span className="inline-block px-3 py-1 rounded-full text-xs font-mono font-semibold bg-brand/20 text-brand-300 border border-brand/40 w-fit">
+                        {edu.gpa}
+                      </span>
+                    </div>
+
+                    <div className="text-slate-300 font-medium text-sm mb-1 flex items-center gap-1.5">
+                      <ScaleJusticeIcon className="w-4 h-4 text-brand-400" />
+                      <span>{edu.institution}</span>
+                    </div>
+
+                    <p className="text-xs text-brand-400 font-mono mb-4">
+                      {edu.major}
+                    </p>
+
+                    <div className="space-y-1.5 pt-3 border-t border-slate-800">
+                      {edu.honors.map((honor, hIdx) => (
+                        <div key={hIdx} className="flex items-start gap-2 text-xs text-slate-300">
+                          <span className="text-brand-400 font-bold">✦</span>
+                          <span>{honor}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </section>
+      );
+    };
+
+    // --- Section Experience (Pengalaman Kerja dan Organisasi) ---
+    const ExperienceSection = () => {
+      const [filter, setFilter] = useState('all');
+
+      const experiences = [
+        {
+          type: 'work',
+          role: "Legal Intern",
+          company: "Pengadilan Negeri Magetan (Magetan District Court)",
+          period: "Jun 2025 - Agu 2025",
+          location: "Magetan, Jawa Timur",
+          summary: "Melaksanakan magang kemahiran hukum di lingkungan peradilan umum di bawah Mahkamah Agung RI, bertanggung jawab atas administrasi berkas perkara pidana, e-Court, dan SIPP.",
+          achievements: [
+            "Membantu administrasi berkas perkara pidana, verifikasi kelengkapan berkas, dan pengarsipan sesuai standar SOP pengadilan.",
+            "Berkontribusi dalam analisis struktur, sistematika, dan telaah pertimbangan hukum dalam penyusunan draf putusan perkara pidana.",
+            "Mengelola, memverifikasi kelengkapan, dan mengarsipkan lebih dari 1.000+ berkas perkara pelanggaran lalu lintas (tilang).",
+            "Membantu mengunggah berkas pelimpahan perkara dari Kepolisian ke dalam sistem administrasi elektronik e-Court.",
+            "Mengelola dan memperbarui data persidangan melalui SIPP (Sistem Informasi Penelusuran Perkara)."
+          ]
+        },
+        {
+          type: 'work',
+          role: "Legal Intern",
+          company: "Pengadilan Militer III-10 Surabaya",
+          period: "Agu 2024 - Sep 2024",
+          location: "Sidoarjo & Surabaya, Jawa Timur",
+          summary: "Menjalani magang yudisial di peradilan militer Mahkamah Agung RI yang berwenang memeriksa dan mengadili tindak pidana militer.",
+          achievements: [
+            "Mengelola dokumen administrasi perkara pidana militer dan pemeliharaan arsip perkara sesuai prosedur yudisial.",
+            "Mendampingi Panitera Pengadilan dalam penyiapan, penataan, dan pengarsipan berkas persidangan pidana militer.",
+            "Mendukung operasional administrasi registrasi perkara, penjadwalan sidang, dan dokumentasi ruang sidang.",
+            "Menjaga akurasi dan standar kerahasiaan tinggi dokumen peradilan militer (judicial confidentiality)."
+          ]
+        },
+        {
+          type: 'organization',
+          role: "President (Ketua Umum)",
+          company: "Law Student Mootcourt (LASMOT) UIN Maulana Malik Ibrahim Malang",
+          period: "Nov 2024 - Nov 2025",
+          location: "Malang, Jawa Timur",
+          summary: "Memimpin organisasi kemahiran hukum mahasiswa Fakultas Syariah yang berfokus pada peradilan semu, riset hukum, legal drafting, dan advokasi.",
+          achievements: [
+            "Mereformasi struktur organisasi LASMOT guna meningkatkan efektivitas tata kelola dan produktivitas lembaga.",
+            "Menginisiasi & menjadi penanggung jawab National Maliki Legal Competition (NMLC) yang diikuti >100 delegasi dari 40 universitas se-Indonesia.",
+            "Menyusun program strategis: FGD Competition, Internal Mootcourt Fakultas, dan Kunjungan Studi ke Mahkamah Konstitusi RI.",
+            "Menyelenggarakan program edukasi persiapan magang bagi 100+ mahasiswa serta menumbuhkan keanggotaan aktif hingga 130+ anggota."
+          ]
+        },
+        {
+          type: 'organization',
+          role: "Staf Divisi Kajian Strategis & Aksi",
+          company: "Dewan Eksekutif Mahasiswa (DEMA) Fakultas Syariah UIN Malang",
+          period: "Feb 2024 - Des 2024",
+          location: "Malang, Jawa Timur",
+          summary: "Bertanggung jawab atas riset kajian isu hukum strategis, advokasi aspirasi mahasiswa, dan kolaborasi akademik antarkampus.",
+          achievements: [
+            "Mengorganisir kajian hukum kolaboratif lintas organisasi mahasiswa untuk memperkuat dialektika akademis.",
+            "Memproduksi artikel riset hukum ilmiah bulanan yang membahas isu-isu hukum dan perundang-undangan aktual.",
+            "Memfasilitasi inisiatif advokasi untuk menampung dan menindaklanjuti aspirasi mahasiswa fakultas."
+          ]
+        },
+        {
+          type: 'organization',
+          role: "Staf Ahli Bidang Organisasi & Kelembagaan",
+          company: "Senat Mahasiswa (SEMA) Fakultas Syariah UIN Malang",
+          period: "Feb 2023 - Des 2023",
+          location: "Malang, Jawa Timur",
+          summary: "Fokus pada representasi mahasiswa, peninjauan tata kelola legislatif lembaga mahasiswa, dan koordinasi kelembagaan.",
+          achievements: [
+            "Berpartisipasi dalam musyawarah tata kelola kelembagaan dan evaluasi struktur organisasi kemahasiswaan.",
+            "Mendukung koordinasi komunikasi kelembagaan untuk memperkuat efektivitas pemerintahan mahasiswa."
+          ]
+        }
+      ];
+
+      const filteredExperiences = experiences.filter(exp => filter === 'all' || exp.type === filter);
+
+      return (
+        <section id="experience" className="py-24 px-4 md:px-8 relative bg-void-950">
+          <div className="max-w-5xl mx-auto">
+            <SectionHeader 
+              badge="CAREER & LEADERSHIP"
+              title="Pengalaman Kerja & Organisasi"
+              subtitle="Jejak rekam profesional di lembaga peradilan Mahkamah Agung RI, kepemimpinan organisasi hukum, dan inisiasi kompetisi nasional."
+            />
+
+            {/* Filter Buttons */}
+            <div className="flex justify-center gap-3 mb-12">
+              <button
+                onClick={() => setFilter('all')}
+                className={`px-5 py-2 rounded-full text-xs font-mono tracking-wider transition-all ${
+                  filter === 'all'
+                    ? 'bg-brand text-white font-bold shadow-[0_0_15px_#2c67ed]'
+                    : 'bg-void-900 text-slate-400 hover:text-white border border-slate-800'
+                }`}
+              >
+                Semua ({experiences.length})
+              </button>
+              <button
+                onClick={() => setFilter('work')}
+                className={`px-5 py-2 rounded-full text-xs font-mono tracking-wider transition-all ${
+                  filter === 'work'
+                    ? 'bg-brand text-white font-bold shadow-[0_0_15px_#2c67ed]'
+                    : 'bg-void-900 text-slate-400 hover:text-white border border-slate-800'
+                }`}
+              >
+                ⚖️ Pengadilan (2)
+              </button>
+              <button
+                onClick={() => setFilter('organization')}
+                className={`px-5 py-2 rounded-full text-xs font-mono tracking-wider transition-all ${
+                  filter === 'organization'
+                    ? 'bg-brand text-white font-bold shadow-[0_0_15px_#2c67ed]'
+                    : 'bg-void-900 text-slate-400 hover:text-white border border-slate-800'
+                }`}
+              >
+                🏛️ Organisasi (3)
+              </button>
+            </div>
+
+            {/* Experience Cards */}
+            <div className="space-y-6">
+              {filteredExperiences.map((exp, idx) => (
+                <div 
+                  key={idx}
+                  className="glass-card p-6 md:p-8 rounded-2xl relative overflow-hidden group"
+                >
+                  <div className="flex flex-col md:flex-row md:items-start justify-between gap-3 mb-3">
+                    <div>
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className={`px-2.5 py-0.5 rounded text-[10px] font-mono font-bold uppercase ${
+                          exp.type === 'work' ? 'bg-brand/20 text-brand-300 border border-brand/40' : 'bg-cyan-900/30 text-cyan-300 border border-cyan-700/40'
+                        }`}>
+                          {exp.type === 'work' ? 'Judicial Internship' : 'Organizational Leadership'}
+                        </span>
+                        <span className="text-xs text-slate-500 font-mono">• {exp.location}</span>
+                      </div>
+                      <h3 className="font-serif text-xl md:text-2xl font-bold text-white group-hover:text-brand-300 transition-colors">
+                        {exp.role}
+                      </h3>
+                      <div className="text-sm font-semibold text-brand-400 font-sans mt-0.5">
+                        {exp.company}
+                      </div>
+                    </div>
+
+                    <div className="px-3.5 py-1.5 rounded-xl bg-void-950 border border-brand/30 text-xs font-mono text-brand-300 font-bold shrink-0 shadow-[0_0_10px_rgba(44,103,237,0.2)]">
+                      {exp.period}
+                    </div>
+                  </div>
+
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+                    {exp.summary}
+                  </p>
+
+                  <div className="space-y-2 pt-3 border-t border-slate-800">
+                    <div className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider mb-2">
+                      Key Impact & Deliverables:
+                    </div>
+                    {exp.achievements.map((item, aIdx) => (
+                      <div key={aIdx} className="flex items-start gap-2.5 text-xs text-slate-300">
+                        <FiveLeafClover className="w-3.5 h-3.5 text-brand-400 shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </section>
+      );
+    };
+
+    // --- Section Prestasi & Penghargaan ---
+    const AchievementsSection = () => {
+      const achievements = [
+        {
+          title: "Juara 1 / Finalis Lomba Penyusunan Berkas Perkara Peradilan Semu",
+          issuer: "Lawrent Festival - UKK Lawrent Fakultas Syariah IAIN Madura",
+          year: "2024",
+          rank: "Juara 1 (1st Place)",
+          description: "Meraih peringkat pertama dalam kompetisi penyusunan berkas perkara peradilan semu dengan ketelitian administrasi, analisis yuridis, dan penyusunan draf tuntutan/putusan terbaik."
+        },
+        {
+          title: "Inisiator & Penanggung Jawab National Maliki Legal Competition (NMLC)",
+          issuer: "Law Student Mootcourt (LASMOT) & Fakultas Syariah UIN Malang",
+          year: "2025",
+          rank: "Project Initiator & Chair",
+          description: "Memimpin perancangan dan pelaksanaan kompetisi hukum skala nasional mencakup 3 cabang lomba: criminal indictment drafting, lawsuit drafting, dan legal opinion writing yang diikuti 100+ delegasi dari 40 universitas se-Indonesia."
+        },
+        {
+          title: "Penerima Hibah Riset Kolaboratif Mahasiswa–Dosen (Research Grant)",
+          issuer: "Fakultas Syariah Universitas Islam Negeri Maulana Malik Ibrahim Malang",
+          year: "2024",
+          rank: "Awardee Hibah Riset",
+          description: "Terpilih sebagai penerima pendanaan riset kolaboratif bersama akademisi fakultas dalam pengembangan karya ilmiah dan publikasi kajian hukum tata negara."
+        },
+        {
+          title: "Juri Cerdas Cermat Kewarganegaraan Tingkat Nasional",
+          issuer: "Constitutional Law Festival (Clawfest) Vol. 4 - UIN Maulana Malik Ibrahim",
+          year: "2025",
+          rank: "National Judge",
+          description: "Dipercaya sebagai dewan juri kompetisi cerdas cermat hukum tata negara dan kewarganegaraan tingkat nasional pada Oktober 2025."
+        },
+        {
+          title: "Delegasi — National Moot Court Competition (NMCC) Piala Prof. Kafrawi",
+          issuer: "Kompetisi Peradilan Semu Nasional Pidana Perbankan",
+          year: "2025",
+          rank: "Official Delegate",
+          description: "Mewakili universitas dalam kompetisi peradilan semu tindak pidana perbankan tingkat nasional, mencakup riset hukum mendalam, penyusunan berkas perkara, dan simulasi persidangan."
+        },
+        {
+          title: "Delegasi — Sharia Faculty National Moot Court Competition VI",
+          issuer: "Kompetisi Peradilan Semu Nasional Hukum Tata Usaha Negara (TUN)",
+          year: "2024",
+          rank: "Official Delegate",
+          description: "Berperan sebagai delegasi nasional dalam peradilan semu sengketa administrasi negara (TUN), memperkuat kemampuan legal reasoning, legal drafting, dan courtroom advocacy."
+        }
+      ];
+
+      return (
+        <section id="achievements" className="py-20 px-4 md:px-8 relative bg-void-900/40 rune-bg">
+          <div className="max-w-5xl mx-auto">
+            <SectionHeader 
+              badge="HONORS & AWARDS"
+              title="Prestasi & Penghargaan"
+              subtitle="Bukti keunggulan kemahiran hukum, kejuaraan berkas peradilan semu, hibah riset, dan inisiasi kompetisi nasional."
+            />
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {achievements.map((item, idx) => (
+                <div 
+                  key={idx}
+                  className="glass-card p-6 rounded-2xl relative overflow-hidden group border-brand/20 hover:border-brand/60"
+                >
+                  <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <FiveLeafClover className="w-24 h-24 text-brand" />
+                  </div>
+
+                  <div className="flex items-center justify-between gap-2 mb-3">
+                    <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-brand text-white shadow-[0_0_12px_#2c67ed]">
+                      🏆 {item.rank}
+                    </span>
+                    <span className="text-xs font-mono text-brand-300 font-bold">
+                      Tahun {item.year}
+                    </span>
+                  </div>
+
+                  <h3 className="font-serif text-lg font-bold text-white mb-2 group-hover:text-brand-300 transition-colors leading-snug">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-xs text-brand-400 font-mono mb-3">
+                    {item.issuer}
+                  </p>
+
+                  <p className="text-xs text-slate-300 leading-relaxed">
+                    {item.description}
+                  </p>
+
+                  <div className="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-400 font-mono">
+                    <span className="flex items-center gap-1">
+                      <SparklesIcon className="w-3.5 h-3.5 text-brand-400" />
+                      Verified Award
+                    </span>
+                    <span className="text-brand-300">#BlackCloverHonor</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </section>
+      );
+    };
+
+    // --- Section Portfolio with Tabs: Projects & Certificates ---
+    const PortfolioSection = () => {
+      const [activeTab, setActiveTab] = useState('projects');
+      const [selectedItem, setSelectedItem] = useState(null);
+
+      const projects = [
+        {
+          id: 'proj-1',
+          title: "Perancangan Kontrak Bisnis & Perjanjian Komersial (Contract Drafting)",
+          category: "Contract Drafting",
+          client: "Pelatihan Certified Contract Drafting (CCD) - KPN Berdaulat & Bismad Law School",
+          year: "2026",
+          tags: ["#ContractDrafting", "#KlausulHukum", "#RiskMitigation", "#CCD"],
+          image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?q=80&w=800&auto=format&fit=crop",
+          summary: "Penyusunan dan penelaahan kontrak profesional mencakup identifikasi klausul kritis, batasan tanggung jawab (liability), pasal ganti rugi, kerahasiaan (NDA), dan mekanisme penyelesaian sengketa.",
+          details: [
+            "Merumuskan struktur anatomi kontrak komersial yang presisi dari judul, komparisi, premis, hingga klausul substansial.",
+            "Mengidentifikasi risiko hukum klausul ambigu dan merumuskan indemnifikasi untuk melindungi kepentingan para pihak.",
+            "Menelaah studi kasus nyata dalam sengketa wanprestasi dan klausul force majeure komersial."
+          ]
+        },
+        {
+          id: 'proj-2',
+          title: "Pengelolaan Administrasi Perkara Pidana & Sistem Elektronik SIPP / e-Court",
+          category: "Court Administration",
+          client: "Pengadilan Negeri Magetan & Pengadilan Militer III-10 Surabaya",
+          year: "2024 - 2025",
+          tags: ["#eCourt", "#SIPP", "#CriminalCase", "#CourtManagement"],
+          image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=800&auto=format&fit=crop",
+          summary: "Manajemen berkas perkara peradilan pidana umum dan militer, mencakup pengelolaan 1.000+ berkas perkara tilang, verifikasi pelimpahan perkara kepolisian di e-Court, dan update SIPP.",
+          details: [
+            "Memverifikasi kelengkapan formil dan materiil berkas perkara pidana sesuai SOP baku Mahkamah Agung RI.",
+            "Mengoperasikan aplikasi e-Court Mahkamah Agung untuk upload dokumen pelimpahan perkara pidana secara terintegrasi.",
+            "Menganalisis sistematika perancangan draf putusan pidana dan menjaga kerahasiaan dokumen perkara."
+          ]
+        },
+        {
+          id: 'proj-3',
+          title: "Penyusunan Legalitas & Kepatuhan Regulasi Startup Digital",
+          category: "Startup & Business Law",
+          client: "Bisa AI Academy & Ekosistem Bisnis Digital",
+          year: "2026",
+          tags: ["#StartupLaw", "#DigitalBusiness", "#OSS-RBA", "#Compliance"],
+          image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop",
+          summary: "Analisis perizinan berusaha berbasis risiko (OSS-RBA), kepatuhan hukum transaksi elektronik, perlindungan data pribadi (UU PDP), dan tata kelola pendirian entitas startup digital.",
+          details: [
+            "Memetakan kepatuhan perizinan berusaha sektor digital dan perlindungan hak kekayaan intelektual (HAKI) merek dan software.",
+            "Merancang draf Terms & Conditions serta Privacy Policy untuk platform digital interaktif.",
+            "Memberikan rekomendasi kepatuhan hukum operasional bisnis untuk mitigasi sengketa ketenagakerjaan dan kemitraan."
+          ]
+        },
+        {
+          id: 'proj-4',
+          title: "Perancangan Berkas Perkara & Legal Opinion Peradilan Semu Nasional",
+          category: "Legal Research & Opinion",
+          client: "NMCC Piala Prof. Kafrawi & Lawrent Festival IAIN Madura",
+          year: "2024 - 2025",
+          tags: ["#LegalOpinion", "#MootCourt", "#BankingCrime", "#BestDraft"],
+          image: "https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=800&auto=format&fit=crop",
+          summary: "Penyusunan berkas perkara peradilan semu pemenang Juara 1 Lawrent Festival serta perumusan Legal Opinion mendalam pada tindak pidana perbankan dan sengketa TUN.",
+          details: [
+            "Menyusun draf surat dakwaan, surat tuntutan, dan eksepsi peradilan pidana dengan dasar argumentasi yuridis kuat.",
+            "Merumuskan Legal Opinion terstruktur bertema perbankan dan administrasi pemerintahan sesuai asas legalitas.",
+            "Meraih predikat Juara 1 dalam Lomba Penyusunan Berkas Perkara Peradilan Semu 2024."
+          ]
+        }
+      ];
+
+      const certificates = [
+        {
+          id: 'cert-1',
+          title: "Certified Contract Drafting (CCD)",
+          issuer: "KPN Berdaulat & Bismad Law School",
+          year: "2026",
+          certId: "CCD-KPN-2026-ZAMZAM",
+          tags: ["#CCD", "#ContractDrafter", "#CertifiedProfessional"],
+          image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?q=80&w=800&auto=format&fit=crop",
+          summary: "Sertifikasi keahlian khusus penyusunan kontrak, analisis klausul perjanjian bisnis, identifikasi risiko hukum perdata/komersial, dan penelaahan kontrak profesional."
+        },
+        {
+          id: 'cert-2',
+          title: "Pendidikan dan Pelatihan Paralegal II",
+          issuer: "Lesanpuro Law Firm - Malang",
+          year: "2023",
+          certId: "PLG-LESANPURO-2023-088",
+          tags: ["#Paralegal", "#LegalAid", "#AdvocacySkills"],
+          image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=800&auto=format&fit=crop",
+          summary: "Telah menyelesaikan Program Pendidikan & Pelatihan Paralegal II, menguasai keterampilan dasar advokasi, konsultasi hukum masyarakat, dan penanganan perkara non-litigasi."
+        },
+        {
+          id: 'cert-3',
+          title: "Pelatihan Legalitas Startup Digital",
+          issuer: "Bisa AI Academy",
+          year: "2026",
+          certId: "STARTUP-LAW-BISA-2026-921",
+          tags: ["#StartupLaw", "#DigitalLegality", "#RegulatoryCompliance"],
+          image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop",
+          summary: "Pelatihan komprehensif aspek legalitas startup digital, perizinan berusaha OSS-RBA, perlindungan HAKI, privasi data, dan kepatuhan regulasi ekosistem teknologi."
+        },
+        {
+          id: 'cert-4',
+          title: "Pelatihan Hukum Bisnis (Business Law Course)",
+          issuer: "Bisa AI Academy",
+          year: "2026",
+          certId: "BUS-LAW-AI-2026-443",
+          tags: ["#BusinessLaw", "#CorporateLegal", "#CommercialLaw"],
+          image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800&auto=format&fit=crop",
+          summary: "Penyelesaian kursus Hukum Bisnis untuk memperdalam pemahaman aspek yuridis dalam operasional korporasi, transaksi komersial, dan mitigasi risiko bisnis."
+        },
+        {
+          id: 'cert-5',
+          title: "Pelatihan Pemberkasan Perkara (Document Filing Training)",
+          issuer: "Law Student Moot Court (LASMOT) Fakultas Syariah UIN Malang",
+          year: "2025",
+          certId: "FILE-LASMOT-2025-102",
+          tags: ["#CaseFiling", "#CourtAdmin", "#DocumentManagement"],
+          image: "https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=800&auto=format&fit=crop",
+          summary: "Pelatihan kemahiran penyusunan, organisasi, dan manajemen berkas perkara peradilan semu dan administrasi persidangan."
+        }
+      ];
+
+      return (
+        <section id="portfolio" className="py-24 px-4 md:px-8 relative bg-void-950">
+          <div className="max-w-6xl mx-auto">
+            <SectionHeader 
+              badge="PORTFOLIO & CREDENTIALS"
+              title="Karya & Sertifikasi Legal"
+              subtitle="Eksplorasi portofolio perancangan kontrak bisnis, manajemen berkas perkara pengadilan, dan sertifikasi resmi."
+            />
+
+            {/* Tab Navigators */}
+            <div className="flex justify-center mb-12">
+              <div className="p-1.5 rounded-full bg-void-900 border border-brand/40 shadow-[0_0_20px_rgba(44,103,237,0.3)] flex items-center gap-2">
+                <button
+                  onClick={() => setActiveTab('projects')}
+                  className={`flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-mono font-bold tracking-wider uppercase transition-all duration-300 ${
+                    activeTab === 'projects'
+                      ? 'bg-brand text-white shadow-[0_0_15px_#2c67ed]'
+                      : 'text-slate-400 hover:text-white'
+                  }`}
+                >
+                  <ScaleJusticeIcon className="w-4 h-4" />
+                  <span>Projects & Legal Works ({projects.length})</span>
+                </button>
+
+                <button
+                  onClick={() => setActiveTab('certificates')}
+                  className={`flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-mono font-bold tracking-wider uppercase transition-all duration-300 ${
+                    activeTab === 'certificates'
+                      ? 'bg-brand text-white shadow-[0_0_15px_#2c67ed]'
+                      : 'text-slate-400 hover:text-white'
+                  }`}
+                >
+                  <SparklesIcon className="w-4 h-4" />
+                  <span>Certificates ({certificates.length})</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Tab 1: Projects Cards */}
+            {activeTab === 'projects' && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {projects.map((proj) => (
+                  <div 
+                    key={proj.id}
+                    className="glass-card rounded-2xl overflow-hidden group flex flex-col justify-between border-brand/20 hover:border-brand/70"
+                  >
+                    <div>
+                      <div className="relative h-48 overflow-hidden">
+                        <img 
+                          src={proj.image} 
+                          alt={proj.title} 
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-void-950 via-void-950/50 to-transparent" />
+                        <div className="absolute top-3 left-3 px-3 py-1 rounded-full text-[10px] font-mono font-bold bg-brand text-white shadow-[0_0_10px_#2c67ed]">
+                          {proj.category}
+                        </div>
+                        <div className="absolute top-3 right-3 px-2.5 py-1 rounded-md text-[10px] font-mono bg-void-900/90 text-slate-300 border border-brand/40">
+                          {proj.year}
+                        </div>
+                      </div>
+
+                      <div className="p-6">
+                        <div className="text-xs text-brand-400 font-mono font-semibold mb-1 truncate">
+                          Client / Sektor: {proj.client}
+                        </div>
+                        <h3 className="font-serif text-xl font-bold text-white mb-3 group-hover:text-brand-300 transition-colors leading-snug">
+                          {proj.title}
+                        </h3>
+                        <p className="text-xs text-slate-300 leading-relaxed mb-4">
+                          {proj.summary}
+                        </p>
+
+                        <div className="flex flex-wrap gap-1.5 mb-2">
+                          {proj.tags.map((tag, tIdx) => (
+                            <span key={tIdx} className="px-2 py-0.5 rounded text-[10px] font-mono bg-void-950 text-slate-400 border border-slate-800">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="p-6 pt-0">
+                      <button
+                        onClick={() => setSelectedItem(proj)}
+                        className="w-full py-2.5 rounded-xl text-xs font-mono font-bold uppercase tracking-wider text-white bg-void-900 hover:bg-brand/20 border border-brand/40 hover:border-brand transition-all flex items-center justify-center gap-2 shadow-[0_0_12px_rgba(44,103,237,0.2)]"
+                      >
+                        <span>Lihat Detail Klausul & Struktur</span>
+                        <svg className="w-3.5 h-3.5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                      </button>
+                    </div>
+
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* Tab 2: Certificates Cards */}
+            {activeTab === 'certificates' && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {certificates.map((cert) => (
+                  <div 
+                    key={cert.id}
+                    className="glass-card rounded-2xl overflow-hidden group flex flex-col justify-between border-brand/20 hover:border-brand/70"
+                  >
+                    <div>
+                      <div className="relative h-48 overflow-hidden">
+                        <img 
+                          src={cert.image} 
+                          alt={cert.title} 
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-void-950 via-void-950/50 to-transparent" />
+                        <div className="absolute top-3 left-3 px-3 py-1 rounded-full text-[10px] font-mono font-bold bg-brand text-white shadow-[0_0_10px_#2c67ed] flex items-center gap-1">
+                          <FiveLeafClover className="w-3 h-3 text-white" />
+                          <span>Resmi & Terverifikasi</span>
+                        </div>
+                        <div className="absolute top-3 right-3 px-2.5 py-1 rounded-md text-[10px] font-mono bg-void-900/90 text-brand-300 border border-brand/40">
+                          {cert.year}
+                        </div>
+                      </div>
+
+                      <div className="p-6">
+                        <div className="text-xs text-brand-400 font-mono font-semibold mb-1 truncate">
+                          Penerbit: {cert.issuer}
+                        </div>
+                        <h3 className="font-serif text-xl font-bold text-white mb-2 group-hover:text-brand-300 transition-colors leading-snug">
+                          {cert.title}
+                        </h3>
+                        <p className="text-xs text-slate-300 leading-relaxed mb-4">
+                          {cert.summary}
+                        </p>
+
+                        <div className="p-2.5 rounded-lg bg-void-950 border border-brand/20 flex items-center justify-between text-[11px] font-mono text-slate-400">
+                          <span>Credential ID:</span>
+                          <span className="text-brand-300 font-bold">{cert.certId}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="p-6 pt-0">
+                      <button
+                        onClick={() => setSelectedItem(cert)}
+                        className="w-full py-2.5 rounded-xl text-xs font-mono font-bold uppercase tracking-wider text-brand-300 bg-void-900 hover:bg-brand/20 border border-brand/40 hover:border-brand transition-all flex items-center justify-center gap-2"
+                      >
+                        <ShieldLawIcon className="w-3.5 h-3.5 text-brand-400" />
+                        <span>Verifikasi Kredensial Resmi</span>
+                      </button>
+                    </div>
+
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* Detail Modal for Projects / Certificates */}
+            {selectedItem && (
+              <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+                <div className="relative w-full max-w-2xl rounded-2xl p-6 md:p-8 bg-void-900 border-2 border-brand shadow-[0_0_50px_rgba(44,103,237,0.6)] animate-scaleUp">
+                  
+                  <div className="flex items-start justify-between pb-4 border-b border-brand/30">
+                    <div>
+                      <span className="text-xs font-mono font-bold text-brand-400 uppercase tracking-wider">
+                        {selectedItem.category || selectedItem.issuer}
+                      </span>
+                      <h3 className="font-serif text-xl sm:text-2xl font-bold text-white mt-1 leading-snug">
+                        {selectedItem.title}
+                      </h3>
+                    </div>
+                    <button 
+                      onClick={() => setSelectedItem(null)}
+                      className="p-1.5 rounded-full text-slate-400 hover:text-white hover:bg-brand/20 transition-colors"
+                    >
+                      ✕
+                    </button>
+                  </div>
+
+                  <div className="mt-5 space-y-4">
+                    <p className="text-sm text-slate-300 leading-relaxed">
+                      {selectedItem.summary}
+                    </p>
+
+                    {selectedItem.details && (
+                      <div className="p-4 rounded-xl bg-void-950 border border-brand/20 space-y-2">
+                        <div className="text-xs font-mono font-bold text-white uppercase tracking-wider mb-1">
+                          Ruang Lingkup Klausul & Pekerjaan:
+                        </div>
+                        {selectedItem.details.map((detail, dIdx) => (
+                          <div key={dIdx} className="flex items-start gap-2.5 text-xs text-slate-300">
+                            <span className="text-brand-400 font-bold">✓</span>
+                            <span>{detail}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    {selectedItem.certId && (
+                      <div className="p-4 rounded-xl bg-void-950 border border-brand/30 flex items-center justify-between">
+                        <div>
+                          <div className="text-xs text-slate-400 font-mono">Nomor Registrasi Kredensial</div>
+                          <div className="text-sm font-bold font-mono text-brand-300">{selectedItem.certId}</div>
+                        </div>
+                        <span className="px-3 py-1 rounded bg-brand/20 text-brand-300 text-xs font-mono font-bold border border-brand/40">
+                          STATUS: AKTIF & TERVERIFIKASI
+                        </span>
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="mt-6 pt-4 border-t border-brand/25 flex items-center justify-end gap-3">
+                    <button
+                      onClick={() => setSelectedItem(null)}
+                      className="px-5 py-2 rounded-xl text-xs font-mono font-bold text-white bg-brand hover:bg-brand-600 transition-colors shadow-[0_0_15px_rgba(44,103,237,0.4)]"
+                    >
+                      Tutup
+                    </button>
+                  </div>
+
+                </div>
+              </div>
+            )}
+
+          </div>
+        </section>
+      );
+    };
+
+    // --- Section Contact with Form & Social Links ---
+    const ContactSection = () => {
+      const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        subject: 'Konsultasi Perancangan Kontrak (Contract Drafting)',
+        message: ''
+      });
+      const [isSubmitting, setIsSubmitting] = useState(false);
+      const [submitSuccess, setSubmitSuccess] = useState(false);
+
+      const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+      };
+
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+
+        setTimeout(() => {
+          setIsSubmitting(false);
+          setSubmitSuccess(true);
+          setFormData({
+            name: '',
+            email: '',
+            subject: 'Konsultasi Perancangan Kontrak (Contract Drafting)',
+            message: ''
+          });
+
+          setTimeout(() => setSubmitSuccess(false), 6000);
+        }, 1200);
+      };
+
+      const socialLinks = [
+        {
+          name: "LinkedIn",
+          username: "in/zamzamnrjmn",
+          url: "https://www.linkedin.com/in/zamzamnrjmn/",
+          icon: (
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+          )
+        },
+        {
+          name: "Lynk.id",
+          username: "lynk.id/zamzam100",
+          url: "https://lynk.id/zamzam100",
+          icon: (
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+            </svg>
+          )
+        },
+        {
+          name: "WhatsApp",
+          username: "08892105843",
+          url: "https://wa.me/628892105843",
+          icon: (
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+          )
+        },
+        {
+          name: "Email Resmi",
+          username: "zamzamn684@gmail.com",
+          url: "mailto:zamzamn684@gmail.com",
+          icon: (
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          )
+        }
+      ];
+
+      return (
+        <section id="contact" className="py-24 px-4 md:px-8 relative bg-void-900/60 rune-bg">
+          <div className="max-w-6xl mx-auto">
+            <SectionHeader 
+              badge="COMMUNICATION & INQUIRIES"
+              title="Hubungi & Konsultasi"
+              subtitle="Siap mendiskusikan kebutuhan perancangan kontrak (CCD), telaah regulasi hukum bisnis & startup, atau peluang kerja sama profesional."
+            />
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+              
+              <div className="lg:col-span-5 space-y-6">
+                
+                <div className="glass-card p-6 md:p-8 rounded-2xl">
+                  <div className="flex items-center gap-3 mb-4">
+                    <FiveLeafClover className="w-8 h-8 text-brand-400" />
+                    <div>
+                      <h3 className="font-serif text-xl font-bold text-white">Konsultasi Terbuka</h3>
+                      <p className="text-xs text-brand-300 font-mono">Respon Cepat & Menjaga Kerahasiaan (NDA)</p>
+                    </div>
+                  </div>
+
+                  <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">
+                    Setiap komunikasi dan draf dokumen yang Anda sampaikan dilindungi oleh prinsip kerahasiaan hubungan hukum yang ketat (<em>attorney-client privilege standard</em>).
+                  </p>
+
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3.5 p-3 rounded-xl bg-void-950/80 border border-brand/20">
+                      <div className="p-2.5 rounded-lg bg-brand/20 text-brand-400">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <div className="text-[10px] text-slate-400 font-mono uppercase">Email Utama</div>
+                        <div className="text-xs sm:text-sm font-semibold text-white">zamzamn684@gmail.com</div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-3.5 p-3 rounded-xl bg-void-950/80 border border-brand/20">
+                      <div className="p-2.5 rounded-lg bg-brand/20 text-brand-400">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <div className="text-[10px] text-slate-400 font-mono uppercase">WhatsApp / Telepon</div>
+                        <div className="text-xs sm:text-sm font-semibold text-white">08892105843 (+62 889-2105-843)</div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-3.5 p-3 rounded-xl bg-void-950/80 border border-brand/20">
+                      <div className="p-2.5 rounded-lg bg-brand/20 text-brand-400">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <div className="text-[10px] text-slate-400 font-mono uppercase">Domisili</div>
+                        <div className="text-xs sm:text-sm font-semibold text-white">Malang & Jawa Timur, Indonesia</div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                {/* Social Media Links Card */}
+                <div className="glass-card p-6 rounded-2xl">
+                  <h4 className="text-xs font-mono font-bold text-white uppercase tracking-wider mb-4 flex items-center gap-2">
+                    <SparklesIcon className="w-4 h-4 text-brand-400" />
+                    <span>Tautan Profil & Portofolio Online</span>
+                  </h4>
+                  
+                  <div className="grid grid-cols-2 gap-3">
+                    {socialLinks.map((social, idx) => (
+                      <a
+                        key={idx}
+                        href={social.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="p-3 rounded-xl bg-void-950 border border-slate-800 hover:border-brand/60 transition-all flex items-center gap-2.5 group"
+                      >
+                        <div className="text-slate-400 group-hover:text-brand-400 transition-colors">
+                          {social.icon}
+                        </div>
+                        <div className="overflow-hidden">
+                          <div className="text-xs font-semibold text-white group-hover:text-brand-300 transition-colors truncate">
+                            {social.name}
+                          </div>
+                          <div className="text-[10px] text-slate-500 font-mono truncate">
+                            {social.username}
+                          </div>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+
+              {/* Right Column: Contact Form */}
+              <div className="lg:col-span-7">
+                <div className="glass-card p-6 md:p-8 rounded-2xl relative overflow-hidden">
+                  
+                  <h3 className="font-serif text-2xl font-bold text-white mb-2 flex items-center gap-2">
+                    <SwordIcon className="w-5 h-5 text-brand-400" />
+                    <span>Kirim Pesan / Permohonan Draf</span>
+                  </h3>
+                  <p className="text-xs text-slate-400 font-mono mb-6">
+                    Isi formulir di bawah ini untuk memulai konsultasi atau penawaran kerja sama legal.
+                  </p>
+
+                  {submitSuccess && (
+                    <div className="mb-6 p-4 rounded-xl bg-brand/20 border border-brand text-brand-200 text-xs font-mono flex items-center gap-3 animate-fadeIn">
+                      <FiveLeafClover className="w-5 h-5 text-brand-400 shrink-0" />
+                      <div>
+                        <strong className="text-white block font-sans font-bold">Pesan Sihir Berhasil Terkirim!</strong>
+                        Terima kasih telah menghubungi Zam Zam Nurjaman. Pesan Anda akan dibalas dalam kurun waktu 1x24 jam kerja.
+                      </div>
+                    </div>
+                  )}
+
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-xs font-mono text-slate-300 mb-1.5 uppercase">
+                          Nama Lengkap / Instansi *
+                        </label>
+                        <input
+                          type="text"
+                          name="name"
+                          required
+                          value={formData.name}
+                          onChange={handleChange}
+                          placeholder="e.g. Budi Santoso / PT Startup Indonesia"
+                          className="w-full px-4 py-2.5 rounded-xl bg-void-950 border border-slate-800 focus:border-brand focus:ring-1 focus:ring-brand text-white text-xs sm:text-sm outline-none transition-colors"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-xs font-mono text-slate-300 mb-1.5 uppercase">
+                          Alamat Email *
+                        </label>
+                        <input
+                          type="email"
+                          name="email"
+                          required
+                          value={formData.email}
+                          onChange={handleChange}
+                          placeholder="nama@email.com"
+                          className="w-full px-4 py-2.5 rounded-xl bg-void-950 border border-slate-800 focus:border-brand focus:ring-1 focus:ring-brand text-white text-xs sm:text-sm outline-none transition-colors"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-mono text-slate-300 mb-1.5 uppercase">
+                        Kategori Keperluan Legal
+                      </label>
+                      <select
+                        name="subject"
+                        value={formData.subject}
+                        onChange={handleChange}
+                        className="w-full px-4 py-2.5 rounded-xl bg-void-950 border border-slate-800 focus:border-brand focus:ring-1 focus:ring-brand text-white text-xs sm:text-sm outline-none transition-colors"
+                      >
+                        <option value="Konsultasi Perancangan Kontrak (Contract Drafting)">Perancangan & Telaah Kontrak Bisnis (Contract Drafting)</option>
+                        <option value="Legalitas & Kepatuhan Regulasi Startup Digital">Legalitas & Kepatuhan Regulasi Startup Digital</option>
+                        <option value="Legal Research & Penyusunan Legal Opinion">Legal Research & Penyusunan Legal Opinion</option>
+                        <option value="Tawaran Posisi Legal Officer / Legal Specialist">Tawaran Posisi Legal Officer / Legal Specialist</option>
+                        <option value="Kerja Sama Akademik & Pelatihan Peradilan Semu">Kerja Sama Akademik & Pelatihan Peradilan Semu</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-mono text-slate-300 mb-1.5 uppercase">
+                        Deskripsi Singkat / Rincian Pesan *
+                      </label>
+                      <textarea
+                        name="message"
+                        required
+                        rows="4"
+                        value={formData.message}
+                        onChange={handleChange}
+                        placeholder="Jelaskan kebutuhan hukum Anda, jenis perjanjian yang diperlukan, batas waktu (deadline), atau pertanyaan spesifik..."
+                        className="w-full px-4 py-2.5 rounded-xl bg-void-950 border border-slate-800 focus:border-brand focus:ring-1 focus:ring-brand text-white text-xs sm:text-sm outline-none transition-colors resize-none"
+                      ></textarea>
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full py-3.5 rounded-xl font-bold text-xs sm:text-sm uppercase tracking-wider text-white bg-brand hover:bg-brand-600 transition-all duration-300 shadow-[0_0_20px_rgba(44,103,237,0.6)] hover:shadow-[0_0_35px_rgba(44,103,237,0.9)] flex items-center justify-center gap-2"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          <span>Mengirimkan Pesan Bersegel...</span>
+                        </>
+                      ) : (
+                        <>
+                          <ScaleJusticeIcon className="w-4 h-4" />
+                          <span>Kirim Permohonan Konsultasi</span>
+                        </>
+                      )}
+                    </button>
+                  </form>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+      );
+    };
+
+    // --- Footer ---
+    const Footer = ({ onOpenGrimoire }) => (
+      <footer className="py-12 px-4 border-t border-brand/20 bg-void-950 relative">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+          
+          <div className="flex items-center gap-3">
+            <FiveLeafClover className="w-8 h-8 text-brand-400" />
+            <div>
+              <div className="font-serif font-bold text-base text-white tracking-wider">
+                ZAM ZAM NURJAMAN, S.H., CCD
+              </div>
+              <div className="text-[11px] text-slate-400 font-mono">
+                Legal Professional & Certified Contract Drafter • Clover Kingdom Aesthetic
+              </div>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-4 text-xs font-mono text-slate-400">
+            <a href="#hero" className="hover:text-brand-300 transition-colors">Beranda</a>
+            <span>•</span>
+            <a href="#about" className="hover:text-brand-300 transition-colors">About</a>
+            <span>•</span>
+            <a href="#portfolio" className="hover:text-brand-300 transition-colors">Portfolio</a>
+            <span>•</span>
+            <button onClick={onOpenGrimoire} className="hover:text-brand-300 text-brand-400 transition-colors">
+              5-Leaf Grimoire
+            </button>
+          </div>
+
+          <div className="text-xs text-slate-500 font-mono">
+            &copy; 2026 Zam Zam Nurjaman, S.H., CCD. All rights reserved.
+            <div className="text-[10px] text-slate-600">Built with React + Tailwind CSS + Anime Black Clover Theme</div>
+          </div>
+
+        </div>
+      </footer>
+    );
+
+    // --- Main App Root ---
+    const App = () => {
+      const [activeSection, setActiveSection] = useState('hero');
+      const [grimoireOpen, setGrimoireOpen] = useState(false);
+
+      useEffect(() => {
+        const sections = ['hero', 'about', 'education', 'experience', 'achievements', 'portfolio', 'contact'];
+        const handleScroll = () => {
+          const scrollPos = window.scrollY + 200;
+          for (const sec of sections) {
+            const el = document.getElementById(sec);
+            if (el) {
+              const top = el.offsetTop;
+              const height = el.offsetHeight;
+              if (scrollPos >= top && scrollPos < top + height) {
+                setActiveSection(sec);
+                break;
+              }
+            }
+          }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+      }, []);
+
+      return (
+        <div className="relative min-h-screen bg-void-950 text-slate-100 overflow-x-hidden">
+          <MagicParticleCanvas />
+
+          <FloatingNavbar 
+            activeSection={activeSection} 
+            onOpenGrimoire={() => setGrimoireOpen(true)} 
+          />
+
+          <main>
+            <HeroSection onOpenGrimoire={() => setGrimoireOpen(true)} />
+            <AboutSection />
+            <EducationSection />
+            <ExperienceSection />
+            <AchievementsSection />
+            <PortfolioSection />
+            <ContactSection />
+          </main>
+
+          <Footer onOpenGrimoire={() => setGrimoireOpen(true)} />
+
+          <GrimoireModal 
+            isOpen={grimoireOpen} 
+            onClose={() => setGrimoireOpen(false)} 
+          />
+        </div>
+      );
+    };
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>
